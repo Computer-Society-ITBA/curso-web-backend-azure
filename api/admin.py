@@ -4,7 +4,7 @@ from api import models, constants
 # Importamos el modelo de Group
 from django.contrib.auth.models import Group
 # Importamos el error que no se pudo hacer la operación
-from django.db.utils import OperationalError
+from django.db.utils import ProgrammingError
 # Registramos nuestro modelo
 admin.site.register(models.Account)
 admin.site.register(models.Transaction)
@@ -21,5 +21,5 @@ try:
 	    print("User creado exitosamente")
 	else:
 	    print("User ya existía, no fue creado")
-except OperationalError:
+except ProgrammingError:
 	print("No existe la base de datos de los grupos")
