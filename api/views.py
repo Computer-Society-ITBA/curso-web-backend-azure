@@ -16,15 +16,8 @@ from django.contrib.auth.models import Group
 from django.core.paginator import Paginator, EmptyPage
 # Importamos para los queries
 from django.db.models import Q
-import datetime
 
 # Esta función es la que registramos en los urls
-
-@api_view(['GET'])
-@permission_classes([AllowAny])
-def api_health(request):
-    return Response({"status": "API is UP", "time": datetime.datetime.now }, status=status.HTTP_200_OK)
-
 
 @api_view(['POST', 'GET'])
 @permission_classes([AllowAny])
